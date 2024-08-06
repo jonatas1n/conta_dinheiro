@@ -1,0 +1,56 @@
+:root {
+  font-family: sans-serif;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 1366px;
+  width: 80%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.cedula__counter img {
+  grid-column: span 2;
+  width: 100%;
+}
+
+.cedula__counter {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: .25rem;
+  border: 1px solid #ccc;
+}
+
+.cedula__counter__plus {
+  position: absolute;
+  top: calc(50% - 1rem);
+  left: calc(50% - 1rem);
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.cedula__undo {
+  padding: 1rem;
+  grid-column: span 2;
+}
+
+.total {
+  grid-column: span 2;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-gap: .5rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+}

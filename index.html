@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta Dinheiros</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Conta Dinheiros</h1>
+    </div>
+  </header>
+  <div class="container">
+    <main>
+      <div class="cedula__counter">
+        <input type="number" id="cedula-2" value="0" min="0" step="1">
+        <button onclick="addMoney(2)">
+          <img src="assets/img/2.jpg" alt="Cédula de 2 reais">
+          <span class="cedula__counter__plus">+</span>
+        </button>
+      </div>
+      <div class="cedula__counter">
+        <input type="number" id="cedula-5" value="0" min="0" step="1">
+        <button onclick="addMoney(5)">
+          <img src="assets/img/5.jpg" alt="Cédula de 5 reais">
+          <span class="cedula__counter__plus">+</span>
+        </button>
+      </div>
+      <div class="cedula__counter">
+        <input type="number" id="cedula-10" value="0" min="0" step="1">
+        <button onclick="addMoney(10)">
+          <img src="assets/img/10.jpg" alt="Cédula de 10 reais">
+          <span class="cedula__counter__plus">+</span>
+        </button>
+      </div>
+      <div class="cedula__counter">
+        <input type="number" id="cedula-20" value="0" min="0" step="1">
+        <button onclick="addMoney(20)">
+          <img src="assets/img/20.jpg" alt="Cédula de 20 reais">
+          <span class="cedula__counter__plus">+</span>
+        </button>
+      </div>
+      <div class="cedula__counter">
+        <input type="number" id="cedula-50" value="0" min="0" step="1">
+        <button onclick="addMoney(50)">
+          <img src="assets/img/50.jpg" alt="Cédula de 50 reais">
+          <span class="cedula__counter__plus">+</span>
+        </button>
+      </div>
+      <div class="cedula__counter">
+        <input type="number" id="cedula-100" value="0" min="0" step="1">
+        <button onclick="addMoney(100)">
+          <img src="assets/img/100.jpg" alt="Cédula de 100 reais">
+          <span class="cedula__counter__plus">+</span>
+        </button>
+      </div>
+      <button class="cedula__undo" onclick="onUndo()">Desfazer</button>
+      <h2 class="total">
+        Total: R$ <span>0</span>
+      </h2>
+    </main>
+  </div>
+  <script src="assets/js/total.js"></script>
+</body>
+</html>
