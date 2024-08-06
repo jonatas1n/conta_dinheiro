@@ -16,17 +16,22 @@ header h1 {
   text-align: center;
 }
 
+main {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
 .container {
   margin-inline: auto;
   max-width: 1366px;
   width: 80%;
 }
 
-main {
+.cedulas {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 1rem;
-  width: 90%;
 }
 
 .cedula__counter img {
@@ -36,7 +41,7 @@ main {
 
 .moeda__counter img {
   grid-column: span 2;
-  width: 50%;
+  width: 100%;
   object-fit: cover;
   object-position: left;
   aspect-ratio: 1;
@@ -50,25 +55,30 @@ main {
   background-color: #ccc;
   border-radius: .5rem;
   grid-column: span 3;
-  justify-content: center;
+  justify-items: center;
+}
+
+:is(.cedula__counter, .moeda__counter) button {
+  position: relative;
 }
 
 .moeda__counter {
   grid-column: span 2;
 }
 
-.moeda__counter input {
+:is(.moeda__counter, .cedula__counter) input {
   width: 92%;
 }
 
 .moeda__counter button {
   display: grid;
   justify-items: center;
+  position: relative;
 }
 
 .cedula__counter__plus {
   position: absolute;
-  top: calc(50% - 1rem);
+  top: calc(50% - 2rem);
   left: calc(50% - 1rem);
   font-weight: bold;
   font-size: 3rem;
@@ -90,6 +100,6 @@ main {
   }
 
   .container {
-    width: 95%;
+    width: calc(100% - 1rem);
   }
 }

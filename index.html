@@ -13,8 +13,8 @@
       </div>
     </header>
     <div class="container">
-      <div>
-        <main>
+      <main>
+        <div class="cedulas">
           <h2 class="total">Total: R$ <span>0</span></h2>
           <div class="cedula__counter">
             <input type="number" id="cedula-2" value="0" min="0" step="1" />
@@ -99,10 +99,9 @@
               <img src="assets/img/100c.jpeg" alt="Moeda de 1 real" />
               <span class="cedula__counter__plus">+</span>
             </button>
-          </div>
-          <button class="cedula__undo" onclick="onUndo()">Desfazer</button>
-        </main>
-      </div>
+        </div>
+        <button class="cedula__undo" onclick="onUndo()">Desfazer</button>
+      </main>
     </div>
     <script src="assets/js/total.js"></script>
   </body>

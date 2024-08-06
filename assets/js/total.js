@@ -10,7 +10,7 @@ function updateTotal() {
   });
 
   const total = cellValues.reduce((acc, value) => acc + value, 0);
-  totalEl.innerText = total;
+  totalEl.innerText = total.toFixed(2);
 }
 
 function updateCell(value, amount) {
@@ -42,7 +42,6 @@ function addMoney(amount) {
 }
 
 CELL_VALUES.forEach(value => {
-  console.log(value);
   const cell = document.getElementById(`cedula-${value}`);
   cell.addEventListener('input', updateTotal);
 });
