@@ -1,5 +1,5 @@
 const history = [];
-const CELL_VALUES = [2, 5, 10, 20, 50, 100];
+const CELL_VALUES = [0.01, 0.05, 0.1, 0.25, .5, 1, 2, 5, 10, 20, 50, 100];
 
 const totalEl = document.querySelector('.total span');
 
@@ -42,6 +42,7 @@ function addMoney(amount) {
 }
 
 CELL_VALUES.forEach(value => {
+  console.log(value);
   const cell = document.getElementById(`cedula-${value}`);
   cell.addEventListener('input', updateTotal);
 });
