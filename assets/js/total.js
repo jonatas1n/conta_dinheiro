@@ -2,15 +2,25 @@ const history = [];
 const CELL_VALUES = [0.01, 0.05, 0.1, 0.25, .5, 1, 2, 5, 10, 20, 50, 100];
 
 const totalEl = document.querySelector('.total span');
+const totalMoedas = document.querySelector('.total.moedas span');
+const totalCedulas = document.querySelector('.total.cedula span');
 
 function updateTotal() {
-  const cellValues = CELL_VALUES.map(value => {
+  let amountCedulas = 0;
+  let amountMoedas = 0;
+  CELL_VALUES.forEach(value => {
     const cell = document.getElementById(`cedula-${value}`);
-    return parseInt(cell.value) * value || 0;
+    const amount = parseInt(cell.value) * value || 0;
+    if (value <= 1) {
+      amountMoedas += amount;
+      return;
+    }
+    amountCedulas += amount;
   });
 
-  const total = cellValues.reduce((acc, value) => acc + value, 0);
-  totalEl.innerText = total.toFixed(2);
+  totalMoedas.innerText = amountMoedas.toFixed(2);
+  totalCedulas.innerText = amountCedulas.toFixed(2);
+  totalEl.innerText = (amountCedulas + amountMoedas).toFixed(2);
 }
 
 function updateCell(value, amount) {
@@ -45,3 +55,5 @@ CELL_VALUES.forEach(value => {
   const cell = document.getElementById(`cedula-${value}`);
   cell.addEventListener('input', updateTotal);
 });
+
+updateTotal();
